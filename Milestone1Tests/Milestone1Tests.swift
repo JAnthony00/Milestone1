@@ -10,6 +10,16 @@ import XCTest
 
 class Milestone1Tests: XCTestCase {
 
+    func testItem() {
+        let testItem = Item(Name: "itemName", isChecked: true, id: 0)
+        XCTAssertEqual("itemName", testItem.Name)
+        XCTAssertEqual(true, testItem.isChecked)
+        XCTAssertEqual(0, testItem.id)
+    }
+    
+    
+    
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
