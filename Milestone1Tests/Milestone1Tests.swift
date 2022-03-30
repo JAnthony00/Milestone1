@@ -9,7 +9,9 @@ import XCTest
 @testable import Milestone1
 
 class Milestone1Tests: XCTestCase {
-
+    ///testItem function declares an item with arbitrary name, isChecked, and id.
+    ///XCTAssertEqual checks whether an input is equal to the declared variable.
+    ///checking the same input against testItem.Name, testItem.isChecked and testItem.id 
     func testItem() {
         let testItem = Item(Name: "itemName", isChecked: true, id: 0)
         XCTAssertEqual("itemName", testItem.Name)
