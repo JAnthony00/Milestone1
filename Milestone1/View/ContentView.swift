@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    var Items = [Item(Name: "Milk", isChecked: true, id: 0),
+                 Item(Name: "Bread", isChecked: false, id: 1)]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        List {
+            ForEach (Items) { Item in
+                HStack {
+                    Text(Item.Name)
+                        if Item.isChecked == true {
+                            Image(systemName: "checkmark.square")
+                        } else {
+                            Image(systemName: "square")
+                    }
+                }
+            }
+        }
     }
 }

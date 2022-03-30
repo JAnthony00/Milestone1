@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
-struct ItemList {
-    var Item: Item
-}
+//struct ItemList {
+//    var Item: [Item]
+//    var CheckedItem: Bool
+//}

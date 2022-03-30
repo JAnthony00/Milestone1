@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct Milestone1App: App {
-    var List = ItemList(Item: Item(Name: "Milk", isChecked: true))
-    
     var body: some Scene {
         WindowGroup {
             ContentView()

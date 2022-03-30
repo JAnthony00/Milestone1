@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Item {
+struct Item: Identifiable {
     var Name: String
     var isChecked: Bool
+    let id: Int
 }
