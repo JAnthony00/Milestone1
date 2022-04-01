@@ -6,7 +6,13 @@
 //
 
 import Foundation
-//struct ItemList {
-//    var Item: [Item]
-//    var CheckedItem: Bool
-//}
+class ItemList {
+    //creating an array of items
+    var items: [Item]
+    
+    //initialising the item array - constructor
+    init(items: [Item]) {
+        self.items = items
+    }
+    
+}

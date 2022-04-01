@@ -7,14 +7,16 @@
 
 import Foundation
 
-///Parameters & Description
-///- Name: A string for the name of the item
-///- isChecked: A bool to check whether a box will be ticked next to the item
-///- id: An integer number to make each item unique
-///
-///The item struct holds the information for the objects we'll be listing.
+//The item struct holds the information for the objects we'll be listing.
 struct Item: Identifiable {
-    var Name: String
+    
+    // name of item
+    var name: String
+    
+    // whether the box will be ticked
     var isChecked: Bool
+    
+    // unique id
     let id: Int
+
 }
