@@ -11,7 +11,10 @@ import SwiftUI
 struct Milestone1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                //contentview is navigatable now
+                ContentView()
+            }
         }
     }
 }

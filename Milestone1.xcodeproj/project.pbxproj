@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302A121427FDA33E0051CB4C /* ListEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A121327FDA33E0051CB4C /* ListEditView.swift */; };
 		30B78E5827F4235200E6A6CA /* Milestone1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B78E5727F4235200E6A6CA /* Milestone1App.swift */; };
 		30B78E5A27F4235200E6A6CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B78E5927F4235200E6A6CA /* ContentView.swift */; };
 		30B78E5C27F4235400E6A6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B78E5B27F4235400E6A6CA /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		302A121327FDA33E0051CB4C /* ListEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditView.swift; sourceTree = "<group>"; };
 		30B78E5427F4235200E6A6CA /* Milestone1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milestone1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B78E5727F4235200E6A6CA /* Milestone1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone1App.swift; sourceTree = "<group>"; };
 		30B78E5927F4235200E6A6CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				30B78E5927F4235200E6A6CA /* ContentView.swift */,
+				302A121327FDA33E0051CB4C /* ListEditView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				30B78E5A27F4235200E6A6CA /* ContentView.swift in Sources */,
 				30B78E8227F423C800E6A6CA /* Item.swift in Sources */,
 				30B78E5827F4235200E6A6CA /* Milestone1App.swift in Sources */,
+				302A121427FDA33E0051CB4C /* ListEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
