@@ -16,7 +16,7 @@ struct Item: Identifiable {
     // whether the box will be ticked
     var isChecked: Bool
     
-    // unique id
-    let id: Int
+    // randomly generated unique id
+    let id = UUID()
 
 }

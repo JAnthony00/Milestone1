@@ -9,12 +9,16 @@ import SwiftUI
 
 @main
 struct Milestone1App: App {
+    //declare itemList as a StateObject
+    @StateObject var itemList: ItemList = ItemList()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                //contentview is navigatable now
                 ContentView()
             }
+            //every view can now see itemList's information
+            .environmentObject(itemList)
         }
     }
 }

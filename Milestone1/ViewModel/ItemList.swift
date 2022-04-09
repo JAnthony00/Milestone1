@@ -6,13 +6,38 @@
 //
 
 import Foundation
-class ItemList {
+class ItemList: ObservableObject {
     //creating an array of items
-    var items: [Item]
+    //@published allows for each view to be updated when this array changes (for add/delete function)
+    @Published var items: [Item] = []
     
-    //initialising the item array - constructor
-    init(items: [Item]) {
-        self.items = items
+    //initialising the item array
+    init() {
+        //makes contents of the items array the default below
+        addItems()
+    }
+
+    func addItems() {
+        let defaultListRow = [
+            //default information to initialise the array
+            Item(name: "To-Do List 1", isChecked: true),
+            Item(name: "To-Do List 2", isChecked: false),
+            Item(name: "To-Do List 3", isChecked: false),
+            Item(name: "To-Do List 4", isChecked: true)
+
+        ]
+        //appends newItems array to
+        items.append(contentsOf: defaultListRow)
+    }
+    //deletes item at current interacted point
+    func deleteItem(indexSet: IndexSet) {
+        items.remove(atOffsets: indexSet)
+    }
+    //adds an item with the name "checklist" which is unticked
+    func addListRow(name: String) {
+        let newListRow = Item(name: "Checklist", isChecked: false)
+        items.append(newListRow)
+
     }
     
 }

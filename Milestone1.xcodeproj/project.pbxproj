@@ -101,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				30B78E5727F4235200E6A6CA /* Milestone1App.swift */,
+				30B78E8527F4249B00E6A6CA /* Model */,
 				30B78E8827F424C100E6A6CA /* View */,
 				30B78E8727F424B400E6A6CA /* ViewModel */,
-				30B78E8527F4249B00E6A6CA /* Model */,
 				30B78E5B27F4235400E6A6CA /* Assets.xcassets */,
 				30B78E5D27F4235400E6A6CA /* Preview Content */,
 			);
