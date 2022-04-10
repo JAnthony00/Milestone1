@@ -27,8 +27,7 @@ class InteriorList: ObservableObject {
     }
     //adds an item with the name "checklist" which is unticked
     func addInteriorItem(name: String) {
-        //appending "Item" as the name is a problem which needs to be fixed.
-        let newListRow = Item(name: "Placeholder", isChecked: false)
+        let newListRow = Item(name: name, isChecked: false)
         interiorItem.append(newListRow)
     }
     //identifies the item which is being updated through its index, then runs the update function in Item Model

@@ -10,7 +10,7 @@
 ///STILL TO BE DONE
 ///make it so that when clicked, the items toggle isChecked (X)
 ///allow the navigationtitle to be editable - only while the edit button is active (?)
-///make it so that the items return the input name not just the standard onein InteriorList
+///make it so that the items return the input name not just the standard onein InteriorList (X)
 ///reset button which changes all isChecked to no | and a reset whcih brings them all back (?)
 
 import SwiftUI
@@ -43,7 +43,7 @@ struct ListEditView: View {
                 HStack {
                     Image(systemName: "plus.circle").foregroundColor(.green)
                     TextField("Enter new entry name: ", text: $textFieldText) {
-                        interiorList.addInteriorItem(name: textFieldText)
+                        interiorList.addInteriorItem(name: "\(textFieldText)")
                         textFieldText = ""
                     }
                 }
