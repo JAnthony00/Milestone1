@@ -5,14 +5,6 @@
 //  Created by Jack Brighton on 6/4/22.
 //
 
-
-
-///STILL TO BE DONE
-///make it so that when clicked, the items toggle isChecked (X)
-///allow the navigationtitle to be editable - only while the edit button is active (?)
-///make it so that the items return the input name not just the standard onein InteriorList (X)
-///reset button which changes all isChecked to no | and a reset whcih brings them all back (?)
-
 import SwiftUI
 
 struct ListEditView: View {
