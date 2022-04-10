@@ -11,6 +11,7 @@ import SwiftUI
 struct Milestone1App: App {
     //declare itemList as a StateObject
     @StateObject var itemList: ItemList = ItemList()
+    @StateObject var interiorList: InteriorList = InteriorList()
     
     var body: some Scene {
         WindowGroup {
@@ -19,6 +20,7 @@ struct Milestone1App: App {
             }
             //every view can now see itemList's information
             .environmentObject(itemList)
+            .environmentObject(interiorList)
         }
     }
 }

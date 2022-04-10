@@ -20,19 +20,20 @@ class ItemList: ObservableObject {
     func addItems() {
         let defaultListRow = [
             //default information to initialise the array
-            Item(name: "To-Do List 1", isChecked: true),
-            Item(name: "To-Do List 2", isChecked: false),
-            Item(name: "To-Do List 3", isChecked: false),
-            Item(name: "To-Do List 4", isChecked: true)
-
+            Item(name: "Checklist", isChecked: false),
+            Item(name: "Checklist", isChecked: false),
+            Item(name: "Checklist", isChecked: false),
+            Item(name: "Checklist", isChecked: false)
         ]
         //appends newItems array to
         items.append(contentsOf: defaultListRow)
     }
+    
     //deletes item at current interacted point
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
     }
+    
     //adds an item with the name "checklist" which is unticked
     func addListRow(name: String) {
         let newListRow = Item(name: "Checklist", isChecked: false)

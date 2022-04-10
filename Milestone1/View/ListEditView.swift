@@ -9,32 +9,40 @@ import SwiftUI
 
 struct ListEditView: View {
     
+    //edit mode environment
+    @Environment(\.editMode) var editMode
     @State var textFieldText: String = ""
+    @EnvironmentObject var interiorList: InteriorList
     
     var body: some View {
-        ScrollView {
-            VStack {
-                //adding text field to type in
-                TextField("Enter new entry name... ", text: $textFieldText)
-                //make it look nice
-                    .padding(.horizontal)
-                    .frame(height: 40)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
+        List {
+            ForEach (interiorList.interiorItem) { Item in
+                Button(action: {
+                    //Item.isChecked.toggle()
+                }, label: {
+                    HStack {
+                        Text("\(Item.name)")
+                        Spacer()
+                        Image(systemName: Item.isChecked ? "checkmark.square" : "")
+                    }
+                })
             }
-            //making a save button
-            Button(action: {
-                //blank at the moment
-            }, label: {
-                Text("Save".uppercased())
-                //make it look nice
-                    .frame(height: 40)
-                    .font(.headline)
-            })
-            .navigationTitle("Checklist 📝")
-            .padding(5)
+            .onDelete(perform: interiorList.deleteInteriorItem)
+            
+            //if user in edit mode, let them change content
+            if editMode?.wrappedValue == .active {
+                HStack {
+                    Image(systemName: "plus.circle").foregroundColor(.green)
+                    TextField("Enter new entry name: ", text: $textFieldText) {
+                        interiorList.addInteriorItem(name: textFieldText)
+                        textFieldText = ""
+                    }
+                }
+            }
         }
-        
+        .navigationTitle("Checklist 📝")
+        .navigationBarItems(trailing: EditButton())
+        .padding(5)
     }
 }
 

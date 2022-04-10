@@ -16,14 +16,9 @@ struct ContentView: View {
         List {
             //loops through Items until there are none left
             ForEach (itemList.items) { Item in
-                //writes the name of the item in a horizontal stack for the checkbox to be next to it
-                //THIS COULD BE AN EXTRACTED VIEW
                 HStack {
                     //navigation to ListEditView on each item
                     NavigationLink("\(Item.name)", destination: ListEditView())
-                    Spacer()
-                    //            CHECKED ITEM IS NOT NECESSARY HERE
-                    Image(systemName: Item.isChecked ? "checkmark.square" : "square")
                 }
             }
             //delete function
@@ -41,7 +36,6 @@ struct ContentView: View {
                              }))
         .listStyle(PlainListStyle())
     }
-    
     func plusButtonPressed () {
         itemList.addListRow(name: "")
     }
