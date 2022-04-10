@@ -17,6 +17,18 @@ struct Item: Identifiable {
     var isChecked: Bool
     
     // randomly generated unique id
-    let id = UUID()
-
+    let id: String
+    
+    //initialiser so that I can declare in Item with an id option
+    init(id: String = UUID().uuidString, name: String, isChecked: Bool) {
+        self.id = id
+        self.name = name
+        self.isChecked = isChecked
+    }
+    
+    //update function to invert isChecked, returns another Item which is a replica of the original + inversion.
+    func update() -> Item {
+        return Item(id: id, name: name, isChecked: !isChecked)
+    }
+    
 }

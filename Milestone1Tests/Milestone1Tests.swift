@@ -12,18 +12,18 @@ class Milestone1Tests: XCTestCase {
     //testItem function declares an item with arbitrary name, isChecked, and id.
     //XCTAssertEqual checks whether an input is equal to the declared variable.
     //checking the same input against testItem.Name, testItem.isChecked and testItem.id
-    func testItem() {
-        let testItem = Item(name: "itemName", isChecked: true, id: 0)
-        XCTAssertEqual("itemName", testItem.name)
-        XCTAssertEqual(true, testItem.isChecked)
-        XCTAssertEqual(0, testItem.id)
-    }
-    //changes the name of an item and checks that it remains changed
-    func testName() {
-        var testItem = Item(name: "itemName", isChecked: true, id: 0)
-        testItem.name = "New name"
-        XCTAssertEqual(testItem.name, "New name")
-    }
+//    func testItem() {
+//        let testItem = Item(name: "itemName", isChecked: true, id: 0)
+//        XCTAssertEqual("itemName", testItem.name)
+//        XCTAssertEqual(true, testItem.isChecked)
+//        XCTAssertEqual(0, testItem.id)
+//    }
+//    //changes the name of an item and checks that it remains changed
+//    func testName() {
+//        var testItem = Item(name: "itemName", isChecked: true, id: 0)
+//        testItem.name = "New name"
+//        XCTAssertEqual(testItem.name, "New name")
+//    }
     
     
     

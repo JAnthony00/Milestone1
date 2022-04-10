@@ -15,10 +15,10 @@ struct ContentView: View {
         //lists Items vertically
         List {
             //loops through Items until there are none left
-            ForEach (itemList.items) { Item in
+            ForEach (itemList.items) { item in
                 HStack {
                     //navigation to ListEditView on each item
-                    NavigationLink("\(Item.name)", destination: ListEditView())
+                    NavigationLink("\(item.name)", destination: ListEditView())
                 }
             }
             //delete function

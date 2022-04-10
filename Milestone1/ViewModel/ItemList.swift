@@ -20,9 +20,6 @@ class ItemList: ObservableObject {
     func addItems() {
         let defaultListRow = [
             //default information to initialise the array
-            Item(name: "Checklist", isChecked: false),
-            Item(name: "Checklist", isChecked: false),
-            Item(name: "Checklist", isChecked: false),
             Item(name: "Checklist", isChecked: false)
         ]
         //appends newItems array to
@@ -40,5 +37,4 @@ class ItemList: ObservableObject {
         items.append(newListRow)
 
     }
-    
 }
