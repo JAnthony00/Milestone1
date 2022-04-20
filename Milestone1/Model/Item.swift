@@ -8,7 +8,7 @@
 import Foundation
 
 //The item struct holds the information for the objects we'll be listing.
-struct Item: Identifiable {
+struct Item: Identifiable, Codable {
     
     // name of item
     var name: String

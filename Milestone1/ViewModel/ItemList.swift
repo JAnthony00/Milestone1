@@ -18,23 +18,35 @@ class ItemList: ObservableObject {
     }
 
     func addItems() {
-        let defaultListRow = [
-            //default information to initialise the array
-            Item(name: "Checklist", isChecked: false)
-        ]
-        //appends newItems array to
-        items.append(contentsOf: defaultListRow)
+        //tries to decode the data into the datatype [Item] then set the decoded data to the items array.
+        guard
+            let data = UserDefaults.standard.data(forKey: "item_list"),
+            let savedItems = try? JSONDecoder().decode([Item].self, from: data) else {return}
+        
+        self.items = savedItems
     }
     
     //deletes item at current interacted point
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
+        saveItems()
     }
     
     //adds an item with the name "checklist" which is unticked
     func addListRow(name: String) {
         let newListRow = Item(name: "Checklist", isChecked: false)
         items.append(newListRow)
-
+        saveItems()
+    }
+    //can move items
+    func moveItem(from: IndexSet, to: Int) {
+        items.move(fromOffsets: from, toOffset: to)
+        saveItems()
+    }
+    //trys to encode into a blob of data since userdefaults cannot work with an array
+    func saveItems() {
+        if let encodedData = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedData, forKey: "item_list")
+        }
     }
 }

@@ -23,6 +23,7 @@ struct ContentView: View {
             }
             //delete function
             .onDelete(perform: itemList.deleteItem)
+            .onMove(perform: itemList.moveItem)
         }
         .navigationTitle("Checklist")
         //need to add a trailing button for adding a checklist.
