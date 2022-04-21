@@ -30,6 +30,7 @@ struct ListEditView: View {
                 })
             }
             .onDelete(perform: interiorList.deleteInteriorItem)
+            .onMove(perform: interiorList.moveItem)
             //if user in edit mode, let them change content
             if editMode?.wrappedValue == .active {
                 HStack {
