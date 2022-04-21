@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		302A121327FDA33E0051CB4C /* ListEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditView.swift; sourceTree = "<group>"; };
+		302A121327FDA33E0051CB4C /* ListEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEditView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		30B78E5427F4235200E6A6CA /* Milestone1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milestone1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B78E5727F4235200E6A6CA /* Milestone1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone1App.swift; sourceTree = "<group>"; };
 		30B78E5927F4235200E6A6CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };

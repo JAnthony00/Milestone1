@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 //copy of ItemList
 class InteriorList: ObservableObject {
     @Published var interiorItem: [Item] = []
@@ -34,11 +35,15 @@ class InteriorList: ObservableObject {
         saveItems()
     }
     //identifies the item which is being updated through its index, then runs the update function in Item Model
-    func updateItem(item: Item) {
+    func updateItemChecked(item: Item) {
         if let index = interiorItem.firstIndex(where: { $0.id == item.id }) {
-            interiorItem[index] = item.update()
+            interiorItem[index] = item.updateChecked()
             saveItems()
         }
+    }
+    //sets all checked items to be not checked
+    func resetItemChecked() {
+        //
     }
     //moves items
     func moveItem(from: IndexSet, to: Int) {

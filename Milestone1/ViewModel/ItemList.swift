@@ -8,21 +8,19 @@
 import Foundation
 class ItemList: ObservableObject {
     //creating an array of items
-    //@published allows for each view to be updated when this array changes (for add/delete function)
     @Published var items: [Item] = []
     
     //initialising the item array
     init() {
-        //makes contents of the items array the default below
         addItems()
     }
 
     func addItems() {
-        //tries to decode the data into the datatype [Item] then set the decoded data to the items array.
+        //tries to decode the data into the datatype [Item] then set the decoded data to the items array. If it cannot, it returns nothing.
         guard
             let data = UserDefaults.standard.data(forKey: "item_list"),
             let savedItems = try? JSONDecoder().decode([Item].self, from: data) else {return}
-        
+        //items array is now savedItems
         self.items = savedItems
     }
     
@@ -31,19 +29,18 @@ class ItemList: ObservableObject {
         items.remove(atOffsets: indexSet)
         saveItems()
     }
-    
     //adds an item with the name "checklist" which is unticked
     func addListRow(name: String) {
-        let newListRow = Item(name: "Checklist", isChecked: false)
+        let newListRow = Item(name: name, isChecked: false)
         items.append(newListRow)
         saveItems()
     }
-    //can move items
+    //can move items from current interacted point to another point
     func moveItem(from: IndexSet, to: Int) {
         items.move(fromOffsets: from, toOffset: to)
         saveItems()
     }
-    //trys to encode into a blob of data since userdefaults cannot work with an array
+    //encodes the items array so that it can be saved as a User Default
     func saveItems() {
         if let encodedData = try? JSONEncoder().encode(items) {
             UserDefaults.standard.set(encodedData, forKey: "item_list")

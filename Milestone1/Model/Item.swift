@@ -19,7 +19,7 @@ struct Item: Identifiable, Codable {
     // randomly generated unique id
     let id: String
     
-    //initialiser so that I can declare in Item with an id option
+    //initialiser so that I can declare an Item with an id option (this is only to allow updateChecked to create a replica of an item when changing isChecked
     init(id: String = UUID().uuidString, name: String, isChecked: Bool) {
         self.id = id
         self.name = name
@@ -27,8 +27,7 @@ struct Item: Identifiable, Codable {
     }
     
     //update function to invert isChecked, returns another Item which is a replica of the original + inversion.
-    func update() -> Item {
+    func updateChecked() -> Item {
         return Item(id: id, name: name, isChecked: !isChecked)
     }
-    
 }

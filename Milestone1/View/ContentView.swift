@@ -21,14 +21,12 @@ struct ContentView: View {
                     NavigationLink("\(item.name)", destination: ListEditView())
                 }
             }
-            //delete function
+            //delete & move function
             .onDelete(perform: itemList.deleteItem)
             .onMove(perform: itemList.moveItem)
         }
         .navigationTitle("Checklist")
-        //need to add a trailing button for adding a checklist.
         .navigationBarItems(
-            //default editbutton function
             leading: EditButton(),
             //when pressed, runs plusButtonPressed function which adds a new item with the name "Checklist"
             trailing: Button(action: plusButtonPressed,
@@ -38,11 +36,10 @@ struct ContentView: View {
         .listStyle(PlainListStyle())
     }
     func plusButtonPressed () {
-        itemList.addListRow(name: "")
+        itemList.addListRow(name: "Checklist" )
     }
 }
 
-//added a preview from other SwiftUI files (originally created as plain swift file)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {

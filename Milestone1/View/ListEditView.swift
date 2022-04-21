@@ -16,12 +16,15 @@ struct ListEditView: View {
     @EnvironmentObject var interiorList: InteriorList
     
     var body: some View {
-        
+    
         List {
+            //loops through items
             ForEach (interiorList.interiorItem) { Item in
+                //every item is a button which toggles the isChecked variable when pressed
                 Button(action: {
-                    interiorList.updateItem(item: Item)
+                    interiorList.updateItemChecked(item: Item)
                 }, label: {
+                    //horizontal stack for item name & checksigns
                     HStack {
                         Text("\(Item.name)")
                         Spacer()
@@ -29,22 +32,32 @@ struct ListEditView: View {
                     }
                 })
             }
+            //move & delete functions
             .onDelete(perform: interiorList.deleteInteriorItem)
             .onMove(perform: interiorList.moveItem)
+            
             //if user in edit mode, let them change content
             if editMode?.wrappedValue == .active {
                 HStack {
                     Image(systemName: "plus.circle").foregroundColor(.green)
+                    //text written is taken and added as an item in the interiorList
                     TextField("Enter new entry name: ", text: $textFieldText) {
                         interiorList.addInteriorItem(name: "\(textFieldText)")
+                        //reset textfieldtext to be blank
                         textFieldText = ""
                     }
                 }
             }
         }
         .navigationBarTitle("\(titleTextFieldText)")
-        .navigationBarItems(trailing: EditButton())
-        .padding(5)
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button("Reset") {
+                    //non functional
+                }
+                EditButton()
+            }
+        }
     }
 }
 
