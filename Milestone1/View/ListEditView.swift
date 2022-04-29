@@ -12,7 +12,6 @@ struct ListEditView: View {
     //edit mode environment
     @Environment(\.editMode) var editMode
     @State var textFieldText: String = ""
-    @State var titleTextFieldText: String = "📝 Checklist"
     @EnvironmentObject var interiorList: InteriorList
     
     var body: some View {
@@ -49,7 +48,7 @@ struct ListEditView: View {
                 }
             }
         }
-        .navigationBarTitle("\(titleTextFieldText)")
+        .navigationBarTitle("📝 Checklist")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button("Reset") {
